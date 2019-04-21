@@ -17,7 +17,10 @@ variables:
 required_files:
   - file:
       name: CHANGELOG.md
-      unless: CHANGELOG_DISABLED
+      conditions:
+        - condition:
+            type: unless
+            value: CHANGELOG_DISABLED
   - file:
       name: main.tf
   - file:
@@ -28,17 +31,26 @@ required_files:
       name: README.md
   - file:
       name: LICENSE
-      unless: LICENSE_DISABLED
+      conditions:
+        - condition:
+            type: unless
+            value: LICENSE_DISABLED
   - file:
       name: .pre-commit-config.yaml
-      unless: PRECOMMIT_HOOKS_DISABLED
+      conditions:
+        - condition:
+            type: unless
+            value: PRECOMMIT_HOOKS_DISABLED
   - file:
       name: .gitignore
   - file:
       name: .editorconfig
   - file:
       name: Jenkinsfile
-      only: GLOBAL_JENKINSFILE_ENABLED
+      conditions:
+        - condition:
+            type: only_if
+            value: GLOBAL_JENKINSFILE_ENABLED
 rules:
   - rule:
       name: variables_belong_in_variables_tf
