@@ -5,6 +5,15 @@ title = "terraform-room"
 author = "kondo-io"
 
 # ---------------------------------------------
+# Detection (Used to determine if this matches repo)
+# ---------------------------------------------
+[detection]
+file_extensions = [
+  ".tfvars",
+  ".tf",
+  ".tfstate"
+]
+# ---------------------------------------------
 # Variables (Populated via Jinjia in Templates)
 # ---------------------------------------------
 
