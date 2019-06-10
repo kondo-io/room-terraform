@@ -7,7 +7,7 @@ author = "kondo-io"
 # ---------------------------------------------
 # Detection (Used to determine if this matches repo)
 # ---------------------------------------------
-[detection]
+[detectors]
 file_extensions = [
   ".tfvars",
   ".tf",
